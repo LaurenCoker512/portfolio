@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Project } from "@/types";
-import { ExternalLink, Github, Play, X } from "lucide-react";
+import { ExternalLink, Github, Play } from "lucide-react";
 import Modal from "./Modal";
 
 interface ProjectCardProps {
@@ -67,8 +67,8 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
                 <Modal open={showModal} onClose={() => setShowModal(false)}>
                   <div className="aspect-[16/9] w-full">
                     <iframe
-                      width="98%"
-                      height="98%"
+                      width="97%"
+                      height="97%"
                       src={`https://www.youtube.com/embed/${youTubeId}`}
                       title="Demo Video"
                       frameBorder="0"

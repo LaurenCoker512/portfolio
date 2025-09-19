@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { Mail, Github, Linkedin, Download, Menu, X } from "lucide-react";
-import AnimatedBackground from "@/components/AnimatedBackground";
 import SkillBadge from "./components/SkillBadge";
 import ProjectCard from "@/components/ProjectCard";
 import { experiences, projects, skills } from "@/data/portfolioData";
@@ -265,9 +264,9 @@ export default function Home() {
 
           <div className="bg-card p-8 rounded-xl shadow-lg max-w-2xl mx-auto">
             <p className="text-muted text-center mb-8">
-              I'm currently looking for new opportunities. Whether you have a
-              question or just want to say hi, I'll get back to you as soon as
-              possible!
+              I&apos;m currently looking for new opportunities. Whether you have
+              a question or just want to say hi, I&apos;ll get back to you as
+              soon as possible!
             </p>
 
             <div className="flex justify-center space-x-6 mt-8">

@@ -1,5 +1,6 @@
 import { ReactNode, useEffect } from "react";
 import { createPortal } from "react-dom";
+import { X } from "lucide-react";
 
 interface ModalProps {
   open: boolean;
@@ -27,7 +28,7 @@ const Modal = ({ open, onClose, children }: ModalProps) => {
           onClick={onClose}
           aria-label="Close video modal"
         >
-          ×
+          <X />
         </button>
         {children}
       </div>
