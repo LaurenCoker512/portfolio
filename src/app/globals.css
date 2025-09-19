@@ -1,26 +1,164 @@
 @import "tailwindcss";
 
-:root {
+/* :root {
   --background: #ffffff;
   --foreground: #171717;
+} */
+
+:root {
+  --primary: 210 60% 65%;
+  --primary-foreground: 0 0% 100%;
+  --primary-dark: 210 50% 50%;
+  --accent: 270 50% 65%;
+  --accent-foreground: 0 0% 100%;
+  --accent-dark: 270 40% 50%;
+  --background: 210 40% 98%;
+  --foreground: 220 30% 25%;
+  --card: 210 50% 95%;
+  --card-foreground: 220 30% 25%;
+  --muted: 220 20% 45%;
+  --muted-foreground: 220 20% 45%;
+  --border: 210 30% 85%;
+  --radius: 0.75rem;
+}
+
+.dark {
+  --primary: 210 70% 65%;
+  --primary-foreground: 0 0% 100%;
+  --primary-dark: 210 60% 55%;
+  --accent: 270 60% 65%;
+  --accent-foreground: 0 0% 100%;
+  --accent-dark: 270 50% 55%;
+  --background: 220 30% 12%;
+  --foreground: 210 20% 90%;
+  --card: 220 25% 18%;
+  --card-foreground: 210 20% 90%;
+  --muted: 210 15% 60%;
+  --muted-foreground: 210 15% 60%;
+  --border: 220 25% 25%;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-primary-dark: hsl(var(--primary-dark));
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-accent-dark: hsl(var(--accent-dark));
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-border: hsl(var(--border));
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Custom utilities */
+@utility bg-primary-gradient {
+  background: linear-gradient(
+    135deg,
+    hsl(var(--primary)) 0%,
+    hsl(var(--accent)) 100%
+  );
+}
+
+@utility bg-primary-light {
+  background-color: hsl(var(--primary) / 0.1);
+}
+
+@utility text-primary-gradient {
+  background: linear-gradient(
+    135deg,
+    hsl(var(--primary)) 0%,
+    hsl(var(--accent)) 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Custom class utilities for easier color usage */
+@utility text-primary {
+  color: hsl(var(--color-primary));
+}
+
+@utility text-accent {
+  color: hsl(var(--color-accent));
+}
+
+@utility text-muted {
+  color: hsl(var(--color-muted-foreground));
+}
+
+@utility bg-card {
+  background-color: hsl(var(--color-card));
+}
+
+@utility text-card {
+  color: hsl(var(--color-card-foreground));
+}
+
+@utility border-border {
+  border-color: hsl(var(--color-border));
+}
+
+@utility bg-background {
+  background-color: hsl(var(--color-background));
+}
+
+@utility text-foreground {
+  color: hsl(var(--color-foreground));
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 7rem;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
+  color: hsl(var(--foreground));
+  background: hsl(var(--background));
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Custom animations */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient 15s ease infinite;
+}
+
+/* @utility rounded-xl {
+  border-radius: 0.75rem;
+}
+
+@utility bg-gradient-to-r {
+  background-image: linear-gradient(to right, var(--tw-gradient-stops));
+} */
