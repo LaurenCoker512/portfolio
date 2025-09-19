@@ -140,7 +140,7 @@ export default function Home() {
                 Get In Touch
               </a>
               <a
-                href="/resume.pdf"
+                href="/lauren_coker_resume.pdf"
                 download
                 className="px-6 py-3 border border-primary text-primary rounded-lg hover:bg-primary-light transition-colors flex items-center"
               >
